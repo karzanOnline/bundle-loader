@@ -1,6 +1,6 @@
 {
-  "name": "bundle-loader",
-  "version": "0.5.5",
+  "name": "bundle-loader-janna",
+  "version": "0.1.0",
   "author": "Tobias Koppers @sokra",
   "description": "bundle loader module for webpack",
   "dependencies": {
@@ -14,6 +14,6 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/webpack/bundle-loader.git"
+    "url": "https://github.com/karzanOnline/bundle-loader"
   }
 }

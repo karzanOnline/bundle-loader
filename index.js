@@ -21,11 +21,14 @@ module.exports.pitch = function(remainingRequest) {
 	var result;
 	if(query.lazy) {
 		result = [
-			"module.exports = function(cb) {\n",
-			"	require.ensure([], function(require) {\n",
-			"		cb(require(", loaderUtils.stringifyRequest(this, "!!" + remainingRequest), "));\n",
-			"	}" + chunkNameParam + ");\n",
-			"}"];
+            "module.exports = LaziedModule \n",
+            "function LaziedModule(cb) {\n",
+            "	require.ensure([], function(require) {\n",
+            "		cb(require(", loaderUtils.stringifyRequest(this, "!!" + remainingRequest), "));\n",
+            "	}" + chunkNameParam + ");\n",
+            "}",
+            "LaziedModule.asyncFlag = true"
+			]
 	} else {
 		result = [
 			"var cbs = [], \n",
